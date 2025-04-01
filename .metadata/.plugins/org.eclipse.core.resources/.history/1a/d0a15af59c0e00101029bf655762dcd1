@@ -1,0 +1,10 @@
+package com.mycom.myapp;
+
+public class Snippet {
+	spring.application.name=SpringMVC
+	
+	# mvc jsp
+	spring.mvc.view.prefix=/WEB-INF/jsp/
+	spring.mvc.view.suffix=.jsp
+}
+

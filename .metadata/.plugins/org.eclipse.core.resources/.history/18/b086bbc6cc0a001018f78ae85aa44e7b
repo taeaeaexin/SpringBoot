@@ -1,0 +1,12 @@
+package reflection;
+
+
+// SpringFramework가 User를 들여다 본다
+public class Test {
+	public static void main(String[] args) throws Exception {
+		Class<?> userClass = Class.forName(null);
+		
+
+	}
+
+}

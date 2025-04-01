@@ -1,0 +1,13 @@
+package controller;
+
+import org.springframework.stereotype.Controller;
+
+// client의 request를 받고 처리
+@Controller
+public class HelloController {
+	public String hello() {
+		System.out.println("Hello..!!");
+		return "hello";
+	}
+
+}

@@ -1,0 +1,10 @@
+package controller;
+
+// client의 request를 받고 처리
+public class HelloController {
+	public String hello() {
+		System.out.println("Hello..!!");
+		return "hello";
+	}
+
+}

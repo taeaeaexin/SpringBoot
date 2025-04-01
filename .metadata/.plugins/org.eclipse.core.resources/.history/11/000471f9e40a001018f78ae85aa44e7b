@@ -1,0 +1,26 @@
+package annotation;
+
+import java.lang.annotation.Annotation;
+
+import AnnotationTest.Letter;
+import AnnotationTest.Minseo;
+
+public class ttest {
+	public static void main(String[] args) {
+		Letter letter = new Letter();
+		Class<?> myClass = Class.forName("annotation.Letter");
+
+		Annotation[] annotations = myClass.getAnnotations();
+		for(Annotation annotation : annotations) {
+		    if(annotation instanceof Minseo) {
+		        Minseo minseo = (Minseo) annotation;
+		        System.out.println("To. " + minseo.player());
+		        System.out.println(minseo.message());
+		        System.out.println();
+		        System.out.println("From. " + minseo.team());
+		    }
+		}
+
+	}
+
+}

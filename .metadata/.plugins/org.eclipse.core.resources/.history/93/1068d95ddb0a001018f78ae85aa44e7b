@@ -1,0 +1,14 @@
+package proxy;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyIF myIF = new MyIFImpl();
+		
+		String pram1 = "abc";
+		String param2 = "def";
+
+	}
+
+}

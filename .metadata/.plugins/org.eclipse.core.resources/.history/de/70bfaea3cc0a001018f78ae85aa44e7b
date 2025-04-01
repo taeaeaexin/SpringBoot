@@ -1,0 +1,12 @@
+package reflection;
+
+
+// Spring framework가 User를 들여다 본다
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

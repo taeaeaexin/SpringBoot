@@ -1,0 +1,29 @@
+package proxy;
+
+import java.lang.reflect.Proxy;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MyIF myIF = new MyIFImpl();
+		
+		String param1 = "abc";
+		String param2 = "def";
+		
+		// proxy 없이 객체의 메소드를 직업 호출
+		myIF.m(param1, param2);
+		myIF.m2(param1,  param2);
+		myIF.m3(param1,  param2);
+		myIF.m4(param1,  param2);
+		
+		//myIF 객체의 proxy를 이용해서 점검하고 호출
+		//같은 type으로
+		MyIF proxy = (MyIF) Proxy.newProxyInstance(
+				myIF.getClass().getClassLoader(),
+				myIF.getClass().getClassLoader(),
+				new CheckNotNullInvocation)
+
+	}
+
+}

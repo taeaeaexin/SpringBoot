@@ -1,0 +1,8 @@
+INDEX VERSION 1.134+D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jdt.core
+3027004587.index
+3682174810.index
+4144635519.index
+2584876436.index
+2746914624.index
+1865797976.index
+508466883.index

@@ -1,0 +1,6 @@
+package proxy;
+
+public interface MyIF {
+	void m(String param1, String param2);
+
+}

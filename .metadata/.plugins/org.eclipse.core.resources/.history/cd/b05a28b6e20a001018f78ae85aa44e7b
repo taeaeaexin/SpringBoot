@@ -1,0 +1,6 @@
+package annotation;
+
+@AboutMe(love="sprots", hate="study")
+public class MyClass {
+
+}

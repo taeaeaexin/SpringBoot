@@ -1,0 +1,10 @@
+package proxy;
+
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Target;
+
+@Rentention(RetentionPlicy.RUNTIME)
+@Target(ElementType.METHOD)
+public @interface CheckNotNull {
+	String[] parameterNames();
+}
