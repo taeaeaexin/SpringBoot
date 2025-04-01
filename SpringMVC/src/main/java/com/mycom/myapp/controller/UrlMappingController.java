@@ -63,15 +63,23 @@ public class UrlMappingController {
 	}
 	
 	// sub domain
-	@PostMapping(value="/sub/*")
+	// /sub1 404
+	// /sub1/ OK
+	// /sub1/abc OK
+	// /sub1/abc/def 404
+	@PostMapping(value="/sub1/*")
 	public void m9() {
-		System.out.println("/url1, /url2");
+		System.out.println("/sub1");
 	}
 	
 	// sub domain
-	@PostMapping(value="/sub/**")
+	// /sub2 OK
+	// /sub2/ OK
+	// /sub2/abc OK
+	// /sub2/abc/def OK
+	@PostMapping(value="/sub2/**")
 	public void m10() {
-		System.out.println("/url1, /url2");
+		System.out.println("/sub2");
 	}
 	
 

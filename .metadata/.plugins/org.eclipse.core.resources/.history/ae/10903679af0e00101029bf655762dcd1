@@ -1,0 +1,10 @@
+package com.mycom.myapp.controller;
+
+import org.springframework.stereotype.Controller;
+
+//client -> server로 전송하는 parameter 처리
+//servlet, jsp <= request.getParameter("name")
+@Controller
+public class ParamController {
+
+}

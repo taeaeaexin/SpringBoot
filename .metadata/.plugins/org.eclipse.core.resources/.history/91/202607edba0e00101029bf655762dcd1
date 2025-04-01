@@ -1,0 +1,9 @@
+package com.mycom.myapp.controller;
+
+import org.springframework.stereotype.Controller;
+
+//controller 에서 작업 처리 후 data(model)을 jsp로 보내서
+@Controller
+public class ViewController {
+
+}

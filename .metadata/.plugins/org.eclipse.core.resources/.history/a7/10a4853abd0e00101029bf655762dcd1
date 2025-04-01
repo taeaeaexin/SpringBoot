@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="com.mycom.myapp.dto.CarDto" %>
+<%
+	String seq = (String) request.getAttribute("seq");
+	String carDto = (CarDto) request.getAttribute("carDto");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>viewTest3.jsp</h1>
+	<h4>seq : <%= seq  %></h4>
+	<h1>carDto</h1>
+</body>
+</html>

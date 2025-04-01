@@ -1,0 +1,9 @@
+package com.mycom.myapp.controller;
+
+import org.springframework.stereotype.Controller;
+
+//client -> server 
+@Controller
+public class ParamController {
+
+}
