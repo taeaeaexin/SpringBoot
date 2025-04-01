@@ -81,6 +81,4 @@ public class UrlMappingController {
 	public void m10() {
 		System.out.println("/sub2");
 	}
-	
-
 }

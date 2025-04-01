@@ -1,0 +1,10 @@
+package com.mycom.myapp.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class SessionController {
+	@GetMapping("/session1")
+	public String login(String username, String password, )
+
+}
