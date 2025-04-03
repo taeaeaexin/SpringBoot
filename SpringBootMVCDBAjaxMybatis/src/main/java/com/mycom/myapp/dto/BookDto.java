@@ -41,10 +41,10 @@ public class BookDto {
         this.price = price;
     }
     
-//    @Override
-//    public String toString() {
-//        return "Book [bookId=" + bookId + ", bookName=" + bookName + ", publisher=" + publisher + ", price=" + price
-//                + "]";
-//    }
+    @Override
+    public String toString() {
+        return "Book [bookId=" + bookId + ", bookName=" + bookName + ", publisher=" + publisher + ", price=" + price
+                + "]";
+    }
     
 }
