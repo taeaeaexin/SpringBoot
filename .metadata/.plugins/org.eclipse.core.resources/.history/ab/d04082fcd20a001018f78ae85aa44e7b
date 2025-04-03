@@ -1,6 +1,0 @@
-package annotation;
-
-@AboutMe()
-public class MyClass {
-
-}

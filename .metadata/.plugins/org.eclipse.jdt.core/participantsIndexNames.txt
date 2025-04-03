@@ -9,6 +9,8 @@ D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.c
 \SpringMVC\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2804189185.index
 \SpringBootMVC-BookManager\src\main\java
+D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2984525982.index
+\SpringBootMVCDBAjaxMybatis2\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4195022762.index
 \SpringBootMVCDB\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2407063205.index
