@@ -1,9 +1,0 @@
-package com.mycom.myapp.calc.xml;
-
-public class CalcMain {
-	public static void main(String[] args) {
-		Calculator calculator = new Calculator(); // 생성된 객체 의존성
-		System.out.println(calculator.add(3,7));
-	}
-
-}

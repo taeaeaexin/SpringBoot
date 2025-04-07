@@ -1,0 +1,247 @@
+/* 메인 */
+body {
+    background-color: #008081;
+    margin: 0;
+    font-family: "MS Sans Serif", sans-serif;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 바탕화면 */
+.desktop {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.icon {
+    width: 77px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    align-items: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.icon img {
+    width: 55px;
+    height: 55px;
+    display: block;
+    padding: 0;
+}
+
+.icon p {
+    margin: 0;
+    padding: 0;
+    margin-top : 3px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: white;
+    text-align: left;
+}
+
+/* 작업표시줄 */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #c0c0c0;
+    border-top: 2px solid #ffffff;
+    display: flex;
+    align-items: center;
+    padding-left: 2px;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.start-button {
+    background: #c0c0c0;
+    padding: 3px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: inset -2px -2px rgb(77, 77, 77), inset 2px 2px rgb(177, 177, 177);
+}
+
+.start-button p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+}
+
+.time {
+    background: #c0c0c0;
+    padding-left: 5px;
+    padding-right: 5px;
+    box-shadow: inset 2px 2px rgb(77, 77, 77);
+    margin-right: 3px;
+}
+
+.time p {
+    display: inline-block;
+    margin: 7px;
+    padding: 0;
+    font-size: 20px;
+}
+
+/* 창 */
+.window {
+    width : 777px;
+    background-color: #C0C0C0;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding : 3px;
+    padding-bottom: 20px;
+    box-shadow : inset 2px 2px rgb(200, 200, 200), inset -2px -2px rgb(88, 88, 88);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title-bar {
+    background-color: #00006b;
+    color: white;
+    padding: 5px;
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+    width : 98%;
+}
+
+.title-bar button {
+    background-color: #C0C0C0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    box-shadow: inset -2px -2px gray;
+    font-weight: bold;
+}
+
+.content-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.content {
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 25px;
+    padding : 5px;
+    box-shadow : inset 2px 2px rgb(88, 88, 88), inset -2px -2px rgb(200, 200, 200);
+}
+
+.content img {
+    display: inline-block;
+    width: 150px;
+    height : auto;
+}
+
+button {
+    background-color: #C0C0C0;
+    border: none;
+    color: black;
+    cursor: pointer;
+    box-shadow: inset -2px -2px gray;
+    font-weight: bold;
+}
+
+table {
+    width : 666px;
+    text-align: center;
+}
+
+input {
+  width: 20em;
+  height: 2em;
+  border: 1px solid gray;
+  padding: 0px 10px;
+}
+
+input:focus {
+  border: 1px solid gray;
+  outline: 1px solid gray;
+}
+
+form {
+    margin-left : 50px;
+    margin-right : 50px;
+}
+
+/* 로그인 창 */
+.confirm-btn {
+    width: 100px;
+    height: 30px;
+    background-color: #C0C0C0;
+    border: 2px outset #808080;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.select-box select {
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 12px;
+    border: 2px solid #808080;
+    box-shadow: inset -1px -1px #ffffff, inset 1px 1px #000000;
+    width: 250px;
+    height: 30px;
+    background-color: #fff;
+    padding-left: 5px;
+}
+
+.login-content {
+    display: flex;
+    padding: 10px;
+    flex-grow: 1;
+    font-size: 13px;
+}
+
+.form-row {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.form-row label {
+    width: 100px;
+    text-align: left;
+    margin-right: 5px;
+}
+
+.form-row input {
+    width: 300px;
+    height: 25px;
+    border: 2px inset #c0c0c0;
+    background-color: white;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 13px;
+    padding-left: 3px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.form-buttons button {
+    width: 77px;
+    height: 26px;
+    background-color: #C0C0C0;
+    border: 2px outset gray;
+    font-family: "MS Sans Serif", sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+}

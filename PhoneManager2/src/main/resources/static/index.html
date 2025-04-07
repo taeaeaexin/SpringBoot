@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Mindows 99</title>
+	<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+
+<!-- 아이콘 -->
+<div class="desktop">
+<!--  <div class="icon" onclick="location.href='about.html'">-->
+  <div class="icon" onclick="location.href='/PhoneManager/Phones/list'">
+    <img src="/assets/img/icons/phone.png">
+    <p>재고 관리</p>
+  </div>
+
+  <div class="icon">
+    <img src="/assets/img/icons/people.png">
+    <p>회원 관리</p>
+  </div>
+
+  <div class="icon">
+    <img src="/assets/img/icons/computer.png">
+    <p>거래처 관리</p>
+  </div>
+</div>
+
+<!-- 작업 표시줄 -->
+<div class="taskbar">
+  <div class="start-button">
+    <img src="/assets/img/icons/windows95.png" style = "width: 20px;">
+    <p>시작</p>
+  </div>
+
+  <div class="time">
+    <p>Login</p>
+  </div>
+</div>
+
+<!-- 창 -->
+<div class="window">
+    <div class="title-bar">
+        <span>로그인 패널</span>
+        <button onclick="location.href='/'">✖</button>
+    </div>
+
+    <p style="font-size:13px; padding: 10px;">원하는 작업을 선택하십시오(W).</p>
+    
+    <div class="content-container">
+        <div class="select-box">
+        	<select id="actionSelect">
+                <option value="/pages/login">로그인</option>
+                <option value="/pages/register">회원가입</option>
+                <option value="/pages/board">메인으로</option>
+            </select>
+        </div>
+    </div>
+    
+  <div class="content-container" style="margin-top:10px;">
+    <button class="confirm-btn" onclick="goToSelectedPage()">확인</button>
+  </div>
+</div>
+
+
+<script>
+  function goToSelectedPage() {
+    const selectedValue = document.getElementById("actionSelect").value;
+    if (selectedValue) {
+      window.location.href = selectedValue;
+    }
+  }
+</script>
+
+</body>
+</html>

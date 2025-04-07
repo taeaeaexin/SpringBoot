@@ -5,6 +5,8 @@ D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.c
 \SpringBootMVCDB\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3062578645.index
 \SpringBootMVCDBAjax\src\main\java
+D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2138305904.index
+\PhoneManager_MVCDBAjaxMybatisBoard\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3797513209.index
 \SpringMVC\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2804189185.index
@@ -19,5 +21,7 @@ D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.c
 \SpringMVC\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4152954041.index
 \SpringBootMVC-BookManager\src\main\java
+D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1677751062.index
+\PhoneManager2\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1988367016.index
 \SpringBootMVCDBAjax\src\main\java
