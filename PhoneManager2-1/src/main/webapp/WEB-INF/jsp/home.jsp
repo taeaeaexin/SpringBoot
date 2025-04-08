@@ -20,8 +20,8 @@
         }
 
         .profile-img {
-            width: 80px;
-            height: 80px;
+            width: 40px;
+            height: 40px;
             object-fit: cover;
             border-radius: 50%;
             border: 2px solid #ccc;
@@ -34,7 +34,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container">
         <a class="navbar-brand" href="/home">
-            <img src="/assets/img/user/<%= userDto.getUserProfileImage() %>" class="profile-img" alt="프로필 이미지">
+            <img src="/img/user/<%= userDto.getUserProfileImage() %>" class="profile-img" alt="프로필 이미지">
             <span class="ms-2 fw-bold"><%= userDto.getUserName() %>님</span>
         </a>
         <div class="collapse navbar-collapse justify-content-end">
@@ -49,10 +49,12 @@
 
 <div class="container">
     <div class="welcome-box">
-        <h2>PayPhone에 오신 걸 환영합니다 📞</h2>
-        <p class="lead">이곳은 로그인 후 볼 수 있는 홈 화면입니다.</p>
+        <h2>Home Page</h2>
+        <p class="lead">로그인해야 볼 수 있는 화면</p>
         <hr>
-        <p>프로필 이미지와 이름이 상단에 표시되고,<br>여기서 다양한 기능을 확장할 수 있습니다.</p>
+        <p>CRUD는 오늘 강의 열심히 듣고
+        <br>
+        추가해보겠습니다ㅎㅎ</p>
     </div>
 </div>
 
