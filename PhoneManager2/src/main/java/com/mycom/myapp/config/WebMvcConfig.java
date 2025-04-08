@@ -27,5 +27,4 @@ public class WebMvcConfig implements WebMvcConfigurer {
 					"/users/**"		// 회원가입 ajax 요청
 				);
 	}
-
 }

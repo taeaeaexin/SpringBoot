@@ -84,7 +84,7 @@
             }
             register();
         }
-    };
+    }
 
     function validateUserName(userName) {
         return userName.length >= 2;
@@ -124,8 +124,9 @@
 
         try {
             let response = await fetch("/user/register", fetchOptions);
+console.log(response);
             let data = await response.json();
-
+console.log(data);
             if (data.result === "success") {
                 alert("회원가입이 완료되었습니다!");
                 window.location.href = "/";
