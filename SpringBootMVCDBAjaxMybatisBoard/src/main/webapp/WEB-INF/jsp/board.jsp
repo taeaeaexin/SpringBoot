@@ -44,7 +44,7 @@
 	
 	<div class="input-group mb-3">
   <input id="inputSearchWord" type="text" class="form-control"  placeholder="검색어를 입력하세요">
-  <button id="btnSearch" class="btn btn-info" type="button" >검색</button>
+  <button id="btnSearchWord" class="btn btn-info" type="button" >검색</button>
 </div>
 
 <table class="table table-striped table-hover">
@@ -62,6 +62,7 @@
 </table>
 </div>
 
+	<script src="/assets/js/util.js"></script>
     <script>
     // logout 처리 방식 구분
     // #1. Javascript 를 이용한 비동기 처리
@@ -69,13 +70,72 @@
     //     페이지를 window.location.href 로 logig 페이지로 이동
     // #2. a 의 href 에 page 요청 ( 서버에서 로그야웃 처리 후 바로 페이지를 이동 ) <= 2번으로 진행
     
+    let LIST_ROW_COUNT = 10; // limit 해당 변수
+    let OFFSET = 0; // offset
+    let SEARCH_WORD = ''; // searchWord
+    let TOTAL_LIST_COUNT = 0; // 조회된 건수
+    
     window.onload = function(){
     	// 글 목록
     	listBoard();
+    	
+    	// 검색어 처리
+    	document.querySelector("#btnSearchWord").onclick = function(){
+    		SEARCH_WORD = document.querySelector("#inputSearchWord").value;
+    		listBoard();
+    	}
     }
     
-    function listBoard(){
-    	alert(1);
+    async function listBoard(){
+    	let url = "/boards/list";
+    	let urlParams = "?limit=" + LIST_ROW_COUNT + "&offset=0" + OFFSET + "&searchWord=" + SEARCH_WORD;
+    	let response = await fetch(url + urlParams);
+    	let data = await response.json();
+    	
+    	console.log(data);
+    	
+    	if(data.result == "success"){
+    		makeListHtml(data.list)
+    		TOTAL_LIST_COUNT = data.count;
+    	}
+    }
+    
+    function makeListHtml(list){
+        let listHTML = ``;
+        
+        list.forEach( el => {
+            let boardId = el.boardId;
+            let userName = el.userName;
+            let title = el.title;
+            let content = el.content;
+            let regDt = el.regDt;
+            // LocalDateTime 객체 --> json 처리 결과물이 gson, jackson 2가지가 다르다.
+//          console.log(regDt);
+            let regDtStr = makeDateStr(regDt.date.year, regDt.date.month, regDt.date.day, '.'); // 2024.07.11
+            let readCount = el.readCount;
+            
+            listHTML += `<tr style="cursor:pointer" data-boardId=\${boardId}>
+                            <td>\${boardId}</td>
+                            <td>\${title}</td>
+                            <td>\${userName}</td>
+                            <td>\${regDtStr}</td>
+                            <td>\${readCount}</td>
+                        </tr>`;
+        });     
+        
+        document.querySelector("#boardTbody").innerHTML = listHTML;
+        
+        document.querySelectorAll("#boardTbody tr").forEach( el => {
+            el.onclick = function(){
+                let boardId = this.getAttribute("data-boardId");
+                detailBoard(boardId);
+            }
+        } );
+    }
+    
+    async function detailBoard(boardId) {
+    	alert(boardId);
+    	
     }
     </script>
 </body>

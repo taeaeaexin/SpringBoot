@@ -25,3 +25,5 @@ D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.c
 \PhoneManager2\src\main\java
 D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1988367016.index
 \SpringBootMVCDBAjax\src\main\java
+D:\OneDrive\바탕 화면\GitHub\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3418048181.index
+\PhoneManager2-1\src\main\java

@@ -35,9 +35,9 @@ public class PageController {
 	
 	// 페이지 이동과 상관없는 테스트 용도
 	// jackson, gson 두 library의 LocalDateTime 객체의 json 문자열 비교
-	@GetMapping("/pages/json")
-	@ResponseBody
-	public LocalDateTime json() {
-		return LocalDateTime.now();
-	}
+//	@GetMapping("/pages/json")
+//	@ResponseBody
+//	public LocalDateTime json() {
+//		return LocalDateTime.now();
+//	}
 }
