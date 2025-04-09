@@ -41,4 +41,15 @@
 			       values (#{userSeq}, #{title}, #{content}, now(), 0);
 	
 	</insert>
+	
+	<update id="updateBoard" parameterType="com.mycom.myapp.board.dto.BoardDto">
+		update board
+			set title = #{title},
+				content = #{content}
+		where board_id = #{boardId};
+	</update>
+	
+	<delete id="deleteBoard" parameterType="int">
+		delete from board where board_id = #{boardId};	
+	</delete>
 </mapper>

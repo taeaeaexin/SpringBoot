@@ -19,6 +19,8 @@ public interface BoardDao {
 	//상세
 	BoardDto detailBoard(BoardParamDto boardParamDto); // boardId
 	
-	//등록
+	//등록, 수정
 	int insertBoard(BoardDto boardDto);
+	int updateBoard(BoardDto boardDto);
+	int deleteBoard(int boardId);
 }

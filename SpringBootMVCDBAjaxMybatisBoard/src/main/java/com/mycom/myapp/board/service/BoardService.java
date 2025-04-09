@@ -10,5 +10,7 @@ public interface BoardService {
 	
 	BoardResultDto detailBoard(BoardParamDto boardParamDto); // boardId
 	
-	BoardResultDto insertBoard(BoardDto boardDto); // boardId
+	BoardResultDto insertBoard(BoardDto boardDto);
+	BoardResultDto updateBoard(BoardDto boardDto);
+	BoardResultDto deleteBoard(int boardId);
 }

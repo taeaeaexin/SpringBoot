@@ -57,4 +57,17 @@ public class BoardController {
 		boardDto.setUserSeq(userSeq);
 		return boardService.insertBoard(boardDto);
 	}
+	
+	@PostMapping("/update")
+	@ResponseBody
+	public BoardResultDto updateBoard (BoardDto boardDto) {
+		return boardService.updateBoard(boardDto);
+	}
+	
+	@GetMapping("/delete/{boardId}")
+	@ResponseBody
+	// client에서 boardId 전송 O, boardId 자동으로 mapping 안되면 null 처리시도, primitive type 으로 오류 발생
+	public BoardResultDto deleteBoard (@PathVariable("boardId") Integer boardId) {
+		return boardService.deleteBoard(boardId);
+	}
 }

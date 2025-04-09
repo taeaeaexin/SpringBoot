@@ -8,6 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+            
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css"/>
+	
     <title>로그인</title>
 </head>
 <body>
@@ -76,10 +81,12 @@
             if (data.result === "success") {
                 window.location.href = "/pages/board";
             } else {
-                alert("이메일 또는 비밀번호가 올바르지 않습니다.");
+            	/* alert("이메일 또는 비밀번호가 올바르지 않습니다."); */
+            	alertify.error("이메일 또는 비밀번호가 올바르지 않습니다.");
             }
         } catch (e) {
-            alert("서버와의 통신 중 문제가 발생했습니다.");
+            /* alert("서버와의 통신 중 문제가 발생했습니다."); */
+            alertify.error("서버와 통신 중 문제가 발생했습니다.")
             console.error(e);
         }
     }

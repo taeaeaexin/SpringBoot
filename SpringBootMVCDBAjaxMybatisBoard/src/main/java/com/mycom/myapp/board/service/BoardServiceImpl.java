@@ -98,4 +98,38 @@ public class BoardServiceImpl implements BoardService{
 		}
 		return boardResultDto;
 	}
+	
+	@Override
+	public BoardResultDto updateBoard(BoardDto boardDto) {
+		BoardResultDto boardResultDto = new BoardResultDto();
+		
+		try {
+			int ret = boardDao.updateBoard(boardDto);
+			
+			if(ret == 1) boardResultDto.setResult("success");
+			else boardResultDto.setResult("fail");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			boardResultDto.setResult("fail");
+		}
+		return boardResultDto;
+	}
+
+	@Override
+	public BoardResultDto deleteBoard(int boardId) {
+		BoardResultDto boardResultDto = new BoardResultDto();
+		
+		try {
+			int ret = boardDao.deleteBoard(boardId);
+			
+			if(ret == 1) boardResultDto.setResult("success");
+			else boardResultDto.setResult("fail");
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+			boardResultDto.setResult("fail");
+		}
+		return boardResultDto;
+	}
 }
