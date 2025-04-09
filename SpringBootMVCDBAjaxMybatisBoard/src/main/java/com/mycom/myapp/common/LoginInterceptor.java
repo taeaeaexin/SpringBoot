@@ -32,7 +32,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 			// page 요청
 			// -> login 페이지로 이동 (redirection)
 			}else {
-				System.err.println("LoginInterceptor >>>>> page request ");
+				System.out.println("LoginInterceptor >>>>> page request ");
 				response.sendRedirect("/pages/login");
 			}
 			return false;

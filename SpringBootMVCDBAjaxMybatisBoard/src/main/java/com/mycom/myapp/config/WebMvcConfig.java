@@ -7,7 +7,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import com.mycom.myapp.common.LoginInterceptor;
 
-@Configuration
+//@Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 	@Autowired
 	private LoginInterceptor loginInterceptor;
@@ -20,7 +20,7 @@ public class WebMvcConfig implements WebMvcConfigurer {
 					"/",
 					"/index.html",
 					"favicon.ico",
-//					"/assets/**",
+					"/assets/**",
 					"/pages/login",	// page 요청
 					"/pages/register",	// page 요청
 					"/auth/**",		// 로그인 ajax 요청

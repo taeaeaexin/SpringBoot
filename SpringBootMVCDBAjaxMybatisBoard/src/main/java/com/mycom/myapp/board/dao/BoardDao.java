@@ -15,4 +15,10 @@ public interface BoardDao {
 	
 	List<BoardDto> listBoardSearchWord(BoardParamDto boardParamDto); // limit, offset, searchWord
 	int listBoardTotalCountSearchWord(BoardParamDto boardParamDto); // searchWord
+	
+	//상세
+	BoardDto detailBoard(BoardParamDto boardParamDto); // boardId
+	
+	//등록
+	int insertBoard(BoardDto boardDto);
 }

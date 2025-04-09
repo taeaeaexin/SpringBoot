@@ -3,12 +3,18 @@ package com.mycom.myapp.board.controller;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.mycom.myapp.board.dto.BoardDto;
 import com.mycom.myapp.board.dto.BoardParamDto;
 import com.mycom.myapp.board.dto.BoardResultDto;
 import com.mycom.myapp.board.service.BoardService;
+import com.mycom.myapp.user.dto.UserDto;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 @RequestMapping("/boards")
@@ -32,4 +38,23 @@ public class BoardController {
 		return boardResultDto;
 	}
 	
+	// Controller에서 session에 담긴 현재 조회 사용자의 userSeq를 Service에 전달
+	@GetMapping("/detail/{boardId}")
+	@ResponseBody
+	public BoardResultDto detailBoard(@PathVariable("boardId") Integer boardId, HttpSession session) {
+		BoardParamDto boardParamDto = new BoardParamDto();
+		boardParamDto.setBoardId(boardId);
+		int userSeq = ((UserDto) session.getAttribute("userDto")).getUserSeq(); // session이 invalidate 된 상황?
+		boardParamDto.setUserSeq(userSeq);
+		
+		return boardService.detailBoard(boardParamDto);
+	}
+	
+	@PostMapping("/insert")
+	@ResponseBody
+	public BoardResultDto insertBoard (BoardDto boardDto, HttpSession session) {
+		int userSeq = ((UserDto) session.getAttribute("userDto")).getUserSeq(); // session에서 현재 글 작성자 userSeq
+		boardDto.setUserSeq(userSeq);
+		return boardService.insertBoard(boardDto);
+	}
 }

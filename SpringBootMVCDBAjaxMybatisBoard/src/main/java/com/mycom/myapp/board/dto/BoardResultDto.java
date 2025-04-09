@@ -5,7 +5,7 @@ import java.util.List;
 public class BoardResultDto {
 	private String result; // 등록, 수정, 삭제 작업 성공, 실패
 	private List<BoardDto> list; // 목록
-	private BoardDto dot; // 상세
+	private BoardDto dto; // 상세
 	private int count;
 
 	public String getResult() {
@@ -24,12 +24,12 @@ public class BoardResultDto {
 		this.list = list;
 	}
 
-	public BoardDto getDot() {
-		return dot;
+	public BoardDto getDto() {
+		return dto;
 	}
 
-	public void setDot(BoardDto dot) {
-		this.dot = dot;
+	public void setDto(BoardDto dto) {
+		this.dto = dto;
 	}
 
 	public int getCount() {
@@ -42,6 +42,6 @@ public class BoardResultDto {
 
 	@Override
 	public String toString() {
-		return "BoardResultDto [result=" + result + ", list=" + list + ", dot=" + dot + ", count=" + count + "]";
+		return "BoardResultDto [result=" + result + ", list=" + list + ", dto=" + dto + ", count=" + count + "]";
 	}
 }

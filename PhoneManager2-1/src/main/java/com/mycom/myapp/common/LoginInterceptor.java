@@ -28,7 +28,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 response.setContentType("application/json; charset=UTF-8");
                 response.getWriter().write(jsonStr);
             } else {
-                System.err.println("LoginInterceptor > page request ");
+                System.out.println("LoginInterceptor > page request ");
                 response.sendRedirect("/login");
             }
             return false;
