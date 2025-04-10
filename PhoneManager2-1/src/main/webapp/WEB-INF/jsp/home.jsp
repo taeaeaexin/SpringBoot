@@ -47,16 +47,84 @@
     </div>
 </nav>
 
-<div class="container">
-    <div class="welcome-box">
-        <h2>Home Page</h2>
-        <p class="lead">로그인해야 볼 수 있는 화면</p>
-        <hr>
-        <p>CRUD는 오늘 강의 열심히 듣고
-        <br>
-        추가해보겠습니다ㅎㅎ</p>
+<div class="container mt-3">
+    <h4 class="text-center">게시판</h4>
+    
+    <div class="input-group mb-3">
+        <input id="inputSearchWord" type="text" class="form-control" placeholder="검색어를 입력하세요.">
+        <button id="btnSearchWord" class="btn btn-success" type="button">검색</button>
     </div>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성일시</th>
+                <th>조회수</th>
+            </tr>
+        </thead>
+        <tbody id="boardTbody"></tbody>
+    </table>
+
+    <div id="paginationWrapper"></div>
 </div>
+
+<script>
+    let LIST_ROW_COUNT = 10;
+    let OFFSET = 0;
+    let SEARCH_WORD = '';
+    let TOTAL_LIST_COUNT = 0;
+    let PAGE_LINK_COUNT = 10;
+    let CURRENT_PAGE_INDEX = 1;
+
+    window.onload = function () {
+        listBoard();
+
+        document.querySelector("#btnSearchWord").onclick = function () {
+            SEARCH_WORD = document.querySelector("#inputSearchWord").value;
+            listBoard();
+        };
+    };
+
+    async function listBoard() {
+        let url = "/boards/list";
+        let urlParams = "?limit=" + LIST_ROW_COUNT + "&offset=" + OFFSET + "&searchWord=" + SEARCH_WORD;
+        let response = await fetch(url + urlParams, { headers: { ajax: "true" } });
+        let data = await response.json();
+
+        if (data.result == "success") {
+            makeListHtml(data.list);
+            TOTAL_LIST_COUNT = data.count;
+            addPagination();
+        } else if (data.result == "login") {
+            window.location.href = "/pages/login";
+        } else {
+            alert("글 조회 실패");
+        }
+    }
+
+    function makeListHtml(list) {
+        let html = "";
+        list.forEach(el => {
+            let regDtStr = `${el.regDt.date.year}.${el.regDt.date.month}.${el.regDt.date.day}`;
+            html += `
+                <tr>
+                    <td>${el.boardId}</td>
+                    <td>${el.title}</td>
+                    <td>${el.userName}</td>
+                    <td>${regDtStr}</td>
+                    <td>${el.readCount}</td>
+                </tr>`;
+        });
+        document.querySelector("#boardTbody").innerHTML = html;
+    }
+
+    function addPagination() {
+        // 일단 패스해도 됨. 이후 페이징 추가
+    }
+</script>
 
 </body>
 </html>
