@@ -87,8 +87,8 @@ public class BoardServiceImpl implements BoardService{
 				boardDao.insertBoardUserRead(boardParamDto); // 현재 게시글을 현재 사용자가 읽었다. 표시 증록
 				
 				//transaction test
-				String s = null;
-				s.length();
+//				String s = null;
+//				s.length();
 				boardDao.updateBoardReadCount(boardParamDto.getBoardId()); // 현재 게시글 조회수 증가 처리
 			}
 			// 게시글 상세 정보
@@ -151,18 +151,25 @@ public class BoardServiceImpl implements BoardService{
 	}
 
 	@Override
+	@Transactional
 	public BoardResultDto deleteBoard(int boardId) {
 		BoardResultDto boardResultDto = new BoardResultDto();
 		
 		try {
-			int ret = boardDao.deleteBoard(boardId);
+			int ret1 = boardDao.deleteBoardUserRead(boardId);
+			int ret2 = boardDao.deleteBoard(boardId);
 			
-			if(ret == 1) boardResultDto.setResult("success");
+			// 오류 테스트
+//			String s = null;
+//			s.length();
+			
+			if(ret1 == 1 && ret2 == 1) boardResultDto.setResult("success");
 			else boardResultDto.setResult("fail");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 			boardResultDto.setResult("fail");
+			TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
 		}
 		return boardResultDto;
 	}
