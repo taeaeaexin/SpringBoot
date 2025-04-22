@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin("*") // 이 controller가 처리하는 모든 요청에 대해서 CORS에 필요한 Header를 내려줌
+//@CrossOrigin("*") // 이 controller가 처리하는 모든 요청에 대해서 CORS에 필요한 Header를 내려줌
 // Get, Post : 가장 일반적으로 백엔드가 이 요청을 지원하는 지 여부 확인 없이 바로 요청
 // Put, Delete : 이전에 사용하지 않던 요청, 일반적이지 않은 요청, 백엔드가 이 요청을 지원하는 지 확인 (Options 요청 <= pre-fligth)
 
