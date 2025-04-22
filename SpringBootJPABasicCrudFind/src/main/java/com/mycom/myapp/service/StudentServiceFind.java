@@ -1,11 +1,10 @@
-package com.mycom.myapp.repository;
+package com.mycom.myapp.service;
 
 import com.mycom.myapp.entity.Student;
-import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface StudentRepository extends JpaRepository<Student, Integer> {
+public interface StudentServiceFind {
     List<Student> findByName(String name);
     List<Student> findByEmailAndPhone(String email, String phone);
     List<Student> findByEmailOrPhone(String email, String phone);
